@@ -1,8 +1,14 @@
-# 🏠 Airbnb Clone — Node.js + MongoDB
+# 🏠 AapnaPG.com — PG & Rental Listing Platform
 
-A full-stack Airbnb-inspired web application built with **Node.js**, **Express**, **MongoDB (Mongoose)**, and **Tailwind CSS**. Supports host and guest flows — listing homes, browsing, booking, and managing favourites.
+A full-stack PG and rental property listing platform built with **Node.js**, **Express**, **MongoDB (Mongoose)**, and **Tailwind CSS**. Supports host and guest flows — listing PGs/rooms, browsing, booking, and managing favourites.
 
+---
 
+## 📸 Preview
+
+> Add screenshots of your app here once deployed.
+
+---
 
 ## ✨ Features
 
@@ -36,7 +42,7 @@ A full-stack Airbnb-inspired web application built with **Node.js**, **Express**
 ## 📁 Project Structure
 
 ```
-AIRBNB-MONGOOSE-DB/
+AAPNAPG.COM/
 ├── routes/
 │   ├── authRouter.js       # Login & signup routes
 │   ├── hostRouter.js       # Host listing management
@@ -70,8 +76,8 @@ AIRBNB-MONGOOSE-DB/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/airbnb-mongoose-db.git
-cd airbnb-mongoose-db
+git clone https://github.com/kunal123kumar/aapnapg.com.git
+cd aapnapg.com
 
 # Install dependencies
 npm install
@@ -82,7 +88,7 @@ npm install
 Create a `.env` file in the root directory:
 
 ```env
-MONGO_URI=mongodb://localhost:27017/airbnb
+MONGO_URI=mongodb://localhost:27017/aapnapg
 SESSION_SECRET=your_secret_key_here
 PORT=3000
 ```
@@ -174,8 +180,8 @@ This project is licensed under the MIT License.
 ## 👤 Author
 
 **Your Name**
-- GitHub: [KunalKumar](https://github.com/kunal123kumar)
+- GitHub: [Porfile](https://github.com/kunal123kumar)
 
 ---
 
-> Built as a learning project to explore full-stack web development with Node.js and MongoDB.
+> Built as a learning project to explore full-stack web development with Node.js and MongoDB — inspired by real-world PG listing platforms.
