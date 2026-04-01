@@ -1,0 +1,100 @@
+<%- include('../partials/head') %>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <%- include('../partials/header') %>
+
+      <!-- Hero Section -->
+      <main class="py-12">
+        <h1 class="text-4xl font-extrabold text-center text-gray-900">
+          Available Homes
+        </h1>
+
+        <div class="flex justify-center mt-4">
+          <span class="w-60 h-1 bg-indigo-600 rounded-full"></span>
+        </div>
+
+      </main>
+      <section class="px-4 py-8">
+        <div class="max-w-7xl mx-auto grid gap-6 
+              grid-cols-1 
+              sm:grid-cols-2 
+              lg:grid-cols-3">
+
+          <% house_data.forEach(home=> { %>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden 
+                  hover:shadow-lg transition-shadow duration-300">
+
+              <!-- Image -->
+              <img src="<%= home.image_file %>" alt="<%= home.name %>" class="w-full h-48 object-cover" />
+
+              <!-- Card Content -->
+              <div class="p-5">
+                <h2 class="text-xl font-semibold mb-2">
+                  <%= home.name %>
+                </h2>
+
+                <p class="text-gray-600 text-sm mb-3">
+                  <%= home.description %>
+                </p>
+
+                <div class="text-sm text-gray-700 space-y-1">
+                  <p>
+                    <strong>📍 Address:</strong>
+                    <%= home.location %>
+                  </p>
+                  <p>
+                    <strong>⭐ Rating:</strong>
+                    <%= home.rating %>
+                  </p>
+                  <p>
+                    <strong>👤 Owner:</strong>
+                    <%= home.houseowner %>
+                  </p>
+                  <p>
+                    <strong>💰 Price per Night:</strong> ₹<%= home.price %>
+                  </p>
+                  <div class="flex flex-col sm:flex-row gap-5 mt-4">
+
+                    <!-- Edit Button -->
+                    <!-- <button class="w-full sm:w-auto lg:px-8
+                            px-4 py-3 text-sm font-semibold
+                            border border-indigo-600 text-indigo-600
+                            rounded-lg
+                            hover:bg-indigo-600 hover:text-white
+                            transition-all duration-300">
+                      Book Now 🚀
+                    </button> -->
+                    <%- include('../partials/favourities', { home: home, button_name: "Add to favourites",
+                      style: "w-full sm:w-auto lg:px-8 px-4 py-3 text-sm font-semibold border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-600 hover:text-white transition-all duration-300"
+                      }) %>
+
+
+
+                      <!-- Delete Button -->
+                      <a href="/home/<%= home._id %> "><button class="w-full sm:w-auto lg:px-8
+                              px-4 py-3 text-sm font-semibold
+                              border border-green-600 text-green-600
+                              rounded-lg
+                              hover:bg-green-600 hover:text-white
+                              transition-all duration-300">
+                          Details 👀
+                        </button>
+                      </a>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <% }) %>
+
+        </div>
+      </section>
+
+
+  </body>
+
+  </html>

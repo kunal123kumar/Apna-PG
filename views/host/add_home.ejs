@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Home on Airbnb</title>
+  <link href="/output.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+  <%- include('../partials/header') %>
+
+    <!-- Form Section -->
+    <main class="flex items-center justify-center py-16 px-4">
+      <div class="bg-white shadow-xl rounded-2xl w-full max-w-lg p-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+          List your home on Airbnb
+        </h2>
+
+        <form action="/host/add-home" method="POST" enctype="multipart/form-data" class="space-y-6">
+          <!-- Home Name -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Home Name
+            </label>
+            <input type="text" name="name" required placeholder="Cozy Mountain Cabin"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-400 focus:outline-none" />
+          </div>
+
+          <!-- House Owner -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              House Owner
+            </label>
+            <input type="text" name="houseowner" required placeholder="John Doe"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-400 focus:outline-none" />
+          </div>
+
+          <!-- Location -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Location
+            </label>
+            <input type="text" name="location" required placeholder="Paris, France"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-400 focus:outline-none" />
+          </div>
+          <!-- Price Per Night -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Price Per Night
+            </label>
+            <input type="text" name="price" required placeholder="₹5000"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-400 focus:outline-none" />
+          </div>
+          <!-- Image URL -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Image Address
+            </label>
+            <input id="image_file" type="file" name="image_file"  required accept=".png , .jpg, .jpeg" class="block w-full cursor-pointer text-sm text-gray-600
+           file:mr-4 file:py-2.5 file:px-5
+           file:rounded-lg file:border
+           file:border-gray-300
+           file:bg-gray-100 file:text-gray-700
+           hover:file:bg-gray-200
+           file:transition
+           border border-gray-300 rounded-xl
+           bg-white
+           shadow-sm
+           focus:outline-none focus:ring-2 focus:ring-gray-400" />
+
+            <p class="mt-2 text-xs text-gray-500">
+              PNG, JPG, JPEG — max 5MB
+            </p>
+          </div>
+
+          <!-- Rating -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Rating
+            </label>
+            <input type="number" name="rating" required min="1" max="5" step="0.1" placeholder="4.5"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-400 focus:outline-none" />
+            <!-- Description -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                Description
+              </label>
+              <textarea name="description" required placeholder="A cozy cabin in the mountains..."
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-400 focus:outline-none"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full bg-rose-500 text-white py-3 rounded-full font-semibold hover:bg-rose-600 transition shadow-md">
+              Add Home
+            </button>
+        </form>
+      </div>
+    </main>
+</body>
+
+</html>

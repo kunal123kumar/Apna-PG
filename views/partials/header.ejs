@@ -1,0 +1,103 @@
+<header class="bg-white/90 backdrop-blur sticky top-0 z-50 border-b border-gray-200">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8fYsTmR0-TXLa06mx13LRXBgbNyBgylU3cw&s"
+          alt="Airbnb Logo" class="h-8 w-8 rounded-md" />
+        <a href="/" class="text-xl font-bold text-rose-500 hover:text-rose-600 transition">
+          Airbnb
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-7 text-sm font-medium text-gray-700">
+
+        <li>
+          <a href="/"
+            class="relative hover:text-rose-500 transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-rose-500 hover:after:w-full after:transition-all">
+            Airbnb Home
+          </a>
+        </li>
+
+        <% if (isloggedIn) { %>
+          <% if (typeof user !== 'undefined' && user && user.userType === 'host') { %>
+            <li>
+              <a href="/host/host-home-list" class="nav-link">Hosted Homes</a>
+            </li>
+            <li>
+
+              <a href="/host/add-home" class="nav-link">Add Home</a>
+            </li>
+            <% }else { %>
+              <li>
+                <a href="/home-list" class="nav-link">Home List</a>
+              </li>
+              <li>
+                <a href="/booking" class="nav-link">Booking</a>
+              </li>
+              <li>
+                <a href="/favourites" class="nav-link">Favorites</a>
+              </li>
+              <% } %>
+              <% } %>
+
+                <!-- Auth Buttons -->
+                <% if (!isloggedIn) { %>
+                  <li>
+                    <a href="/login">
+                      <button
+                        class="bg-blue-50 text-blue-700 hover:bg-blue-100 px-5 py-2 rounded-lg transition focus:ring-2 focus:ring-blue-200">
+                        Login
+                      </button>
+                    </a>
+                  </li>
+                  <% } else { %>
+                    <li>
+                      <form action="/logout" method="POST">
+                        <button type="submit"
+                          class="bg-red-50 text-red-700 hover:bg-red-100 px-5 py-2 rounded-lg transition focus:ring-2 focus:ring-red-200">
+                          Logout
+                        </button>
+                      </form>
+                    </li>
+                    <% } %>
+
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-2xl text-gray-700 hover:text-rose-500 transition">
+        ☰
+      </button>
+
+    </div>
+  </nav>
+</header>
+
+<!-- Reusable link style -->
+<style>
+  .nav-link {
+    position: relative;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: #f43f5e;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: #f43f5e;
+    transition: width 0.25s;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>

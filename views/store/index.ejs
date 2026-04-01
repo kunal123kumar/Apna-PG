@@ -1,0 +1,91 @@
+<%- include('../partials/head') %>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+<%- include('../partials/header') %>
+
+    <!-- Hero Section -->
+    <main>
+      <section class="bg-linear-to-r from-rose-500 to-pink-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+            Welcome to Airbnb 
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-rose-100 max-w-2xl mx-auto">
+            Discover unique places to stay or earn money by hosting your own
+            space.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/host/add-home"
+              class="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-rose-500 transition"
+            >
+              Start Hosting
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+   <section class="px-4 py-8">
+  <div class="max-w-7xl mx-auto">
+
+    <% if (!house_data || house_data.length === 0) { %>
+      <!-- Empty State -->
+      <div class="text-center py-16">
+        <p class="text-gray-500 text-lg">
+          🏠 No homes available at the moment.
+        </p>
+        <p class="text-gray-400 text-sm mt-2">
+          Please check back later.
+        </p>
+      </div>
+    <% } else { %>
+
+      <!-- Homes Grid -->
+      <div class="grid gap-6 
+                  grid-cols-1 
+                  sm:grid-cols-2 
+                  lg:grid-cols-3">
+
+        <% house_data.forEach(home => { %>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden 
+                      hover:shadow-lg transition-shadow duration-300">
+
+            <!-- Image -->
+            <img 
+              src="<%= home.image_file %>" 
+              alt="<%= home.name %>"
+              class="w-full h-48 object-cover"
+            />
+
+            <!-- Card Content -->
+            <div class="p-5">
+              <h2 class="text-xl font-semibold mb-2">
+                <%= home.name %>
+              </h2>
+
+              <p class="text-gray-600 text-sm mb-3">
+                <%= home.description %>
+              </p>
+
+              <div class="text-sm text-gray-700 space-y-1">
+                <p><strong>📍 Address:</strong> <%= home.location %></p>
+                <p><strong>⭐ Rating:</strong> <%= home.rating %></p>
+                <p><strong>👤 Owner:</strong> <%= home.houseowner %></p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+
+      </div>
+    <% } %>
+
+  </div>
+</section>
+
+
+  </body>
+</html>

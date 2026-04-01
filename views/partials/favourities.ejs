@@ -1,0 +1,14 @@
+<form action="/favourites" method="post">
+  <input type="hidden" name="homeId" value="<%= home._id %>" />
+
+  <input
+    type="hidden"
+    name="action"
+    value="<%= button_name === 'Remove from favourites' ? 'remove' : 'add' %>"
+  />
+
+  <button class="<%= style %>">
+    <%= button_name === "Remove from favourites" ? "❤️ Remove" : "❤️ Save Home" %>
+  </button>
+</form>
+
