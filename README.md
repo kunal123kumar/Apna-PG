@@ -174,7 +174,7 @@ This project is licensed under the MIT License.
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@your-username](https://github.com/kunal123kumar)
+- GitHub: [KunalKumar](https://github.com/kunal123kumar)
 
 ---
 
