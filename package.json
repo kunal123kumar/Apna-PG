@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js & npm run tailwinds",
-    "tailwinds": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch"
+    "start": "node app.js",
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/output.css"
   },
   "keywords": [],
   "author": "",
